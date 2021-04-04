@@ -1,0 +1,30 @@
+# 指定端口
+server.port=9001
+# server.servlet.context-path=/base
+# 服务名称，不能使用下划线，spring cloud通过名称管理微服务
+spring.application.name=tensquare-base
+
+spring.profiles.include=jdbc
+
+# 数据库信息
+spring.datasource.driver-class-name=${jdbc.driver}
+spring.datasource.url=${jdbc.url}
+spring.datasource.username=${jdbc.username}
+spring.datasource.password=${jdbc.password}
+
+
+# jpa 相关配置 方言 数据库 自动建表等
+spring.jpa.database=mysql
+spring.jpa.generate-ddl=false
+spring.jpa.show-sql=true
+# consul相关配置
+#spring.cloud.consul.host=192.168.183.128
+#spring.cloud.consul.port=8500
+#spring.cloud.consul.discovery.service-name=${spring.application.name}
+#spring.cloud.consul.discovery.enabled=true
+
+#eureka 相关配置
+eureka.client.register-with-eureka=true
+eureka.client.fetch-registry=true
+eureka.client.service-url.defaultZone=http://localhost:8888/eureka
+eureka.instance.prefer-ip-address=true
